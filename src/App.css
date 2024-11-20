@@ -1,0 +1,128 @@
+/* Original styles */
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dark mode and additional styling */
+
+.app {
+  background-color: #ffffff;
+  color: #333333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Navbar styles for dark mode */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  z-index: 100;
+}
+
+.dark-mode .navbar {
+  background-color: #1f1f1f;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+/* Links in navbar */
+.navbar-links a {
+  color: #333333;
+  text-decoration: none;
+  margin: 0 1rem;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .navbar-links a {
+  color: #ffffff;
+}
+
+/* Dark mode toggle button */
+.dark-mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: inherit;
+  outline: none;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .dark-mode-toggle {
+  color: #ffdd57;
+}
+
+/* Styling other components for dark mode */
+.dark-mode .hero {
+  background: linear-gradient(135deg, #333333, #555555);
+}
+
+.dark-mode .about-section,
+.dark-mode .extracurricular-section {
+  background: #1e1e1e;
+}
+
+.dark-mode .skill-circle,
+.dark-mode .fact,
+.dark-mode .activity {
+  background-color: #2e2e2e;
+  color: #ffffff;
+}
+
+/* Smooth fade-in effect */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

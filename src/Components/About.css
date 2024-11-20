@@ -1,0 +1,169 @@
+/* About section styling */
+.about-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom right, #f4f6fa, #e6e9f0);
+  position: relative;
+  transition: background 0.3s, color 0.3s;
+}
+
+.about-section.dark-mode {
+  background: linear-gradient(to bottom right, #1e1e1e, #333333);
+  color: #f5f5f5;
+}
+
+/* Container and layout */
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Image styling */
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 280px;
+  height: 280px;
+  border-radius: 20px;
+  border: 4px solid #ff7e5f;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.about-section.dark-mode .about-image img {
+  border-color: #ffdd57;
+  box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Content styling */
+.about-content {
+  flex: 2;
+  max-width: 700px;
+}
+
+/* Title and Subtitle */
+.about-title {
+  font-size: 2.5rem;
+  color: #ff7e5f;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s;
+}
+
+.about-section.dark-mode .about-title {
+  color: #ffdd57;
+}
+
+.about-subtitle {
+  font-size: 1.8rem;
+  margin: 2rem 0 1rem;
+  color: #333333;
+  transition: color 0.3s;
+}
+
+.about-section.dark-mode .about-subtitle {
+  color: #e0e0e0;
+}
+
+/* Quick Facts Section */
+.quick-facts {
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.quick-facts h3 {
+  font-size: 1.8rem;
+  color: #333333;
+  transition: color 0.3s;
+}
+
+.about-section.dark-mode .quick-facts h3 {
+  color: #e0e0e0;
+}
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.fact {
+  background-color: #ff7e5f;
+  color: #ffffff;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.about-section.dark-mode .fact {
+  background-color: #ffdd57;
+  color: #333333;
+}
+
+/* Skills with Circular Progress Bars */
+.skills {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.skill-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: conic-gradient(#ff7e5f var(--percentage), #e0e0e0 0%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333333;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.about-section.dark-mode .circle {
+  background: conic-gradient(#ffdd57 var(--percentage), #444444 0%);
+  color: #ffffff;
+}
+
+/* Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.timeline-item span {
+  background-color: #ff7e5f;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.about-section.dark-mode .timeline-item span {
+  background-color: #ffdd57;
+  color: #333333;
+}

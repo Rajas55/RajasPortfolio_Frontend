@@ -1,0 +1,284 @@
+/* Hero section styling */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 3rem;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
+  background-size: 400% 400%;
+  animation: colorChange 15s ease infinite;
+  position: relative;
+  overflow: hidden;
+  gap: 2rem;
+  text-align: center;
+}
+
+.hero.dark-mode {
+  background: linear-gradient(135deg, #333333, #444444, #555555, #666666);
+}
+
+/* Center content */
+.hero-content {
+  max-width: 600px;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Smooth flowing text animations */
+.hero-greeting {
+  font-size: 1.5rem;
+  color: #ff7e5f;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.hero.dark-mode .hero-title {
+  color: #ffffff;
+}
+
+.highlight-name {
+  color: #ff7e5f;
+}
+
+.hero.dark-mode .highlight-name {
+  color: #ffd700;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #666666;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.9s;
+}
+
+.hero.dark-mode .hero-subtitle {
+  color: #cccccc;
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 1.2s;
+}
+
+.hero-button {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.hero-button.primary {
+  background-color: #ff7e5f;
+  color: #ffffff;
+}
+
+.hero-button.secondary {
+  background-color: transparent;
+  color: #ff7e5f;
+  border: 2px solid #ff7e5f;
+}
+
+.hero.dark-mode .hero-button.primary {
+  background-color: #444444;
+}
+
+.hero.dark-mode .hero-button.secondary {
+  color: #ffdd57;
+  border-color: #ffdd57;
+}
+
+.hero-button:hover {
+  transform: scale(1.05);
+}
+
+/* Smooth animation for hero image */
+.hero-image-container {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.2s ease forwards;
+  animation-delay: 1.5s;
+  z-index: 2;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.hero-image-container:hover .hero-image {
+  transform: scale(1.05);
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.8rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 1.7s;
+}
+
+.social-icons a {
+  color: #666666;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ff7e5f;
+}
+
+.hero.dark-mode .social-icons a {
+  color: #ffdd57;
+}
+
+/* Scroll Down Indicator */
+.scroll-down-indicator {
+  position: absolute;
+  bottom: 20px;
+  font-size: 2rem;
+  color: #ff7e5f;
+  animation: bounce 2s infinite;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 2s;
+}
+
+.hero.dark-mode .scroll-down-indicator {
+  color: #ffdd57;
+}
+
+/* Animated Gradient Background */
+@keyframes colorChange {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Smooth Text and Image Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* Toggle Switch Styling with Icons */
+.toggle-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toggle-checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.toggle-label {
+  width: 50px;
+  height: 26px;
+  background-color: #ccc;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.toggle-checkbox:checked + .toggle-label {
+  background-color: #4d8efd;
+}
+
+.toggle-ball {
+  width: 22px;
+  height: 22px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.4s ease;
+  transform: translateX(0);
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-ball {
+  transform: translateX(24px);
+}
+
+/* Toggle Icons */
+.toggle-icon {
+  font-size: 1.2rem;
+  color: #ff7e5f;
+}
+
+.sun-icon {
+  color: #fbc02d;
+}
+
+.moon-icon {
+  color: #4d8efd;
+}
+
+.hero.dark-mode .toggle-icon {
+  color: #ffdd57;
+}
