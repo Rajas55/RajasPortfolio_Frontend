@@ -2,9 +2,10 @@
 
 import React from 'react';
 import './About.css';
-import profileImage from '/Users/rajasyardi/my-portfolio-frontend/src/image2.png';
 
 const About = ({ isDarkMode }) => {
+  const image2 = "https://res.cloudinary.com/drjqn1dre/image/upload/v1737167301/image2_dsfdou.png"; // Replace with your Cloudinary URL
+
   return (
     <section className={`about-section ${isDarkMode ? 'dark-mode' : ''}`} id="about">
       <div className="about-container">
@@ -70,7 +71,7 @@ const About = ({ isDarkMode }) => {
 
         {/* Unique Shape for Image */}
         <div className="about-image" data-aos="fade-left">
-          <img src={profileImage} alt="Your Name" />
+          <img src={image2} alt="Description of image" />
         </div>
       </div>
     </section>
