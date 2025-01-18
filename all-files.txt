@@ -49,8 +49,6 @@ fa4573e9b4b81dffd39455b2c8b57c6799684f1d src/Components/Projects.css
 1bf6bcccaf11607f67bb603db34c0b63a14d3832 src/Components/Projects.js
 f834caf93e6bfc8d17a801a929f92e878d0042b4 src/Components/Props.js
 ab5446227b7dfe67d525657023405adbc497011e src/Components/Welcome.js
-26d252f67cb0bd137c1714f6c634f670dbc64f9c src/IMG_8896.JPG
-137f0f2afafbdb20ae3d3fdb9d0371757c710ebb src/image2.png
 ec2585e8c0bb8188184ed1e0703c4c8f2a8419b0 src/index.css
 d563c0fb10ba0e42724b21286eb546ee4e5734fc src/index.js
 9dfc1c058cebbef8b891c5062be6f31033d7d186 src/logo.svg
