@@ -7,7 +7,7 @@ const Navbar = ({ isDarkMode }) => {
   return (
     <nav className={`navbar ${isDarkMode ? 'dark-mode' : ''}`}>
       <div className="navbar-logo">
-        <h1>Your Logo</h1>
+        <h1>Who doesn't love the dark mode</h1>
       </div>
       <ul className="navbar-links">
         <li><a href="#home">Home</a></li>
