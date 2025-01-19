@@ -1,34 +1,77 @@
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px); /* Adds a slight blur for better focus on the modal */
+}
+
+.modal-content {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 450px;
+  width: 90%; /* Ensures it looks good on smaller devices */
+  position: relative;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.4); /* Slightly stronger shadow for depth */
+  animation: scaleIn 0.3s ease-in-out; /* Smooth modal entry animation */
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #ff7e5f;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #feb47b; /* Adds a hover effect for better interactivity */
+}
+
+/* Animation for Modal Appearance */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
   }
-  
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Dark Mode Adjustments */
+.modal-content.dark-mode {
+  background: #333333;
+  color: #ffffff;
+}
+
+.close-button.dark-mode {
+  color: #ffdd57;
+}
+
+.close-button.dark-mode:hover {
+  color: #ffd700;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
   .modal-content {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    max-width: 450px;
-    width: 100%;
-    position: relative;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
   }
-  
+
   .close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: transparent;
-    border: none;
-    font-size: 1.5rem;
-    color: #ff7e5f;
-    cursor: pointer;
+    font-size: 1.2rem;
   }
-  
+}

@@ -1,4 +1,4 @@
-/* Original styles */
+/* General styles */
 .App {
   text-align: center;
 }
@@ -29,6 +29,7 @@
   color: #61dafb;
 }
 
+/* Keyframes for animations */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -39,7 +40,6 @@
 }
 
 /* Dark mode and additional styling */
-
 .app {
   background-color: #ffffff;
   color: #333333;
@@ -51,7 +51,7 @@
   color: #ffffff;
 }
 
-/* Navbar styles for dark mode */
+/* Navbar styles */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -61,7 +61,7 @@
   top: 0;
   background-color: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   z-index: 100;
 }
 
@@ -70,16 +70,25 @@
   box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
 }
 
-/* Links in navbar */
+/* Navbar links */
 .navbar-links a {
   color: #333333;
   text-decoration: none;
   margin: 0 1rem;
+  font-weight: bold;
   transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #ff7e5f;
 }
 
 .dark-mode .navbar-links a {
   color: #ffffff;
+}
+
+.dark-mode .navbar-links a:hover {
+  color: #ffdd57;
 }
 
 /* Dark mode toggle button */
@@ -97,7 +106,7 @@
   color: #ffdd57;
 }
 
-/* Styling other components for dark mode */
+/* Section adjustments for dark mode */
 .dark-mode .hero {
   background: linear-gradient(135deg, #333333, #555555);
 }
@@ -114,7 +123,7 @@
   color: #ffffff;
 }
 
-/* Smooth fade-in effect */
+/* Smooth fade-in animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -126,3 +135,22 @@
   }
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-links a {
+    font-size: 0.9rem;
+    margin: 0 0.5rem;
+  }
+
+  .dark-mode-toggle {
+    font-size: 1.2rem;
+  }
+
+  .App-header {
+    font-size: calc(8px + 2vmin);
+  }
+}

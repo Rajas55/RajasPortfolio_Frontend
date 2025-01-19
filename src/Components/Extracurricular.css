@@ -95,3 +95,23 @@
       font-size: 1rem;
   }
 }
+
+/* Enhancements */
+@media (max-width: 576px) {
+  .extracurricular-title {
+    font-size: 2rem;
+  }
+
+  .activity {
+    padding: 0.8rem;
+    border-radius: 10px;
+  }
+
+  .activity-title {
+    font-size: 1.2rem;
+  }
+
+  .activity-description {
+    font-size: 0.9rem;
+  }
+}

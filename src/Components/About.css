@@ -18,7 +18,7 @@
   max-width: 1100px;
   margin: 0 auto;
   gap: 2rem;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Ensures wrapping for smaller screens */
 }
 
 /* Image styling */
@@ -29,8 +29,9 @@
 }
 
 .about-image img {
-  width: 280px;
-  height: 280px;
+  width: 100%; /* Makes it scale for smaller screens */
+  max-width: 280px;
+  height: auto; /* Keeps the aspect ratio intact */
   border-radius: 20px;
   border: 4px solid #ff7e5f;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
@@ -50,7 +51,7 @@
 
 /* Title and Subtitle */
 .about-title {
-  font-size: 2.5rem;
+  font-size: 2rem; /* Smaller size for better readability on mobile */
   color: #ff7e5f;
   margin-bottom: 1.5rem;
   transition: color 0.3s;
@@ -61,7 +62,7 @@
 }
 
 .about-subtitle {
-  font-size: 1.8rem;
+  font-size: 1.5rem; /* Adjusted for mobile */
   margin: 2rem 0 1rem;
   color: #333333;
   transition: color 0.3s;
@@ -78,7 +79,7 @@
 }
 
 .quick-facts h3 {
-  font-size: 1.8rem;
+  font-size: 1.5rem; /* Smaller for mobile */
   color: #333333;
   transition: color 0.3s;
 }
@@ -89,7 +90,7 @@
 
 .facts-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
   gap: 1rem;
 }
 
@@ -112,6 +113,8 @@
 .skills {
   display: flex;
   gap: 1.5rem;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  justify-content: center; /* Centers the skills on smaller screens */
 }
 
 .skill-circle {
@@ -121,8 +124,8 @@
 }
 
 .circle {
-  width: 80px;
-  height: 80px;
+  width: 70px; /* Smaller size for mobile */
+  height: 70px;
   border-radius: 50%;
   background: conic-gradient(#ff7e5f var(--percentage), #e0e0e0 0%);
   display: flex;
@@ -130,7 +133,7 @@
   justify-content: center;
   color: #333333;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1rem; /* Smaller font for mobile */
   margin-top: 0.5rem;
   transition: background 0.3s, color 0.3s;
 }
@@ -149,8 +152,8 @@
 
 .timeline-item {
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  flex-direction: column; /* Stacks text on mobile */
+  gap: 0.5rem;
 }
 
 .timeline-item span {
@@ -166,4 +169,28 @@
 .about-section.dark-mode .timeline-item span {
   background-color: #ffdd57;
   color: #333333;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column; /* Stacks content vertically */
+    gap: 1.5rem; /* Reduces gap for mobile */
+  }
+
+  .about-title {
+    text-align: center; /* Centers title on mobile */
+  }
+
+  .about-subtitle {
+    text-align: center; /* Centers subtitle on mobile */
+  }
+
+  .skills {
+    gap: 1rem; /* Adjust spacing between skill circles */
+  }
+
+  .timeline-item {
+    align-items: flex-start; /* Aligns text to the left */
+  }
 }

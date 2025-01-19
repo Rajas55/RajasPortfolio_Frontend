@@ -19,11 +19,12 @@ const ContactForm = ({ isOpen, onClose }) => {
     setIsLoading(true);
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL || 'https://rajasportfolio-backend.onrender.com'}/send-email`, {
+      const response = await fetch('https://rajasportfolio-backend.onrender.com/send-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
+      
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

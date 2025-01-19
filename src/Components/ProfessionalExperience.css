@@ -1,117 +1,170 @@
-/* src/components/ProfessionalExperience.css */
-
+/* Professional Experience Section */
 .professional-experience-section {
-    padding: 4rem 2rem;
-    background: linear-gradient(to bottom right, #f4f6fa, #e6e9f0);
-    position: relative;
-  }
-  
-  .professional-experience-section.dark-mode {
-    background: linear-gradient(to bottom right, #333333, #444444);
-  }
-  
-  .experience-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #ff7e5f;
-    text-align: center;
-    margin-bottom: 3rem;
-    animation: fadeInUp 1.5s ease;
-  }
-  
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom right, #f4f6fa, #e6e9f0);
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.professional-experience-section.dark-mode {
+  background: linear-gradient(to bottom right, #333333, #444444);
+}
+
+/* Title Styling */
+.experience-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff7e5f;
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeInUp 1.5s ease;
+}
+
+.professional-experience-section.dark-mode .experience-title {
+  color: #ffdd57;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #ff7e5f;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  padding: 2rem;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+  padding-right: 2rem;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+  padding-left: 2rem;
+}
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ff7e5f;
+  z-index: 1;
+}
+
+.timeline-item.left::after {
+  right: -10px;
+}
+
+.timeline-item.right::after {
+  left: -10px;
+}
+
+/* Content Card */
+.timeline-content {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+  box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.professional-experience-section.dark-mode .timeline-content {
+  background-color: #444444;
+  box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Text Styling */
+.experience-position {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 0.5rem;
+}
+
+.professional-experience-section.dark-mode .experience-position {
+  color: #ffffff;
+}
+
+.experience-company,
+.experience-dates,
+.experience-description {
+  font-size: 1rem;
+  color: #555555;
+}
+
+.professional-experience-section.dark-mode .experience-company,
+.professional-experience-section.dark-mode .experience-dates,
+.professional-experience-section.dark-mode .experience-description {
+  color: #cccccc;
+}
+
+.experience-dates {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .timeline {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
+    padding: 0;
   }
-  
+
   .timeline::before {
-    content: '';
-    position: absolute;
-    width: 4px;
-    background-color: #ff7e5f;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 5px; /* Adjust center line for mobile */
   }
-  
+
   .timeline-item {
-    padding: 2rem;
-    position: relative;
-    width: 50%;
-    box-sizing: border-box;
-  }
-  
-  .timeline-item.left {
-    left: 0;
-    text-align: right;
-    padding-right: 2rem;
-  }
-  
-  .timeline-item.right {
-    left: 50%;
+    width: 100%;
+    padding: 1rem;
     text-align: left;
-    padding-left: 2rem;
   }
-  
+
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
+    padding: 1rem 1rem 1rem 2.5rem; /* Add space for timeline line */
+  }
+
   .timeline-item::after {
-    content: "";
-    position: absolute;
-    top: 15px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #ff7e5f;
-    z-index: 1;
+    left: 0;
   }
-  
-  .timeline-item.left::after {
-    right: -10px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .timeline-item.right::after {
-    left: -10px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .timeline-content {
-    background-color: #ffffff;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 2;
-  }
-  
-  .professional-experience-section.dark-mode .timeline-content {
-    background-color: #444444;
-  }
-  
-  .experience-position {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #333333;
-  }
-  
-  .professional-experience-section.dark-mode .experience-position {
-    color: #ffffff;
-  }
-  
-  .experience-company,
-  .experience-dates,
-  .experience-description {
-    font-size: 1rem;
-    color: #555555;
-  }
-  
-  .professional-experience-section.dark-mode .experience-company,
-  .professional-experience-section.dark-mode .experience-dates,
-  .professional-experience-section.dark-mode .experience-description {
-    color: #cccccc;
-  }
-  
-  .experience-dates {
-    font-style: italic;
-    margin-bottom: 0.5rem;
-  }
-  
+}
