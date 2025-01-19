@@ -45,6 +45,13 @@
 .hero.dark-mode .hero-title {
   color: #ffffff;
 }
+.typing-container {
+  height: 40px; /* Fixed height for typing effect */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
 
 .highlight-name {
   color: #a93f25;

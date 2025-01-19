@@ -38,6 +38,7 @@ const Hero = ({ toggleDarkMode, isDarkMode }) => {
         <div className="hero-greeting">Hello!</div>
         <h1 className="hero-title">
           I’m <span className="highlight-name">Rajas Yardi</span>, <br />
+          <div className="typing-container">
           <Typing
             text={['Software Developer', 'Problem Solver', 'Creative Coder']}
             speed={100}
@@ -45,6 +46,7 @@ const Hero = ({ toggleDarkMode, isDarkMode }) => {
             eraseDelay={2000}
             typingDelay={500}
           />
+          </div>
         </h1>
         <p className="hero-subtitle">
           Crafting clean, efficient code to solve real-world problems.
