@@ -19,20 +19,21 @@ const ContactForm = ({ isOpen, onClose }) => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://rajasportfolio-backend.onrender.com/send-email', {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL || 'https://rajasportfolio-backend.onrender.com'}/send-email`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
-      if (response.ok) {
-        setFeedback('Message sent successfully!');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        setFeedback('Failed to send the message. Please try again.');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
+
+      const data = await response.json();
+      setFeedback('Message sent successfully!');
+      setFormData({ name: '', email: '', message: '' });
     } catch (error) {
+      console.error('Error sending email:', error);
       setFeedback('An error occurred. Please try again.');
     } finally {
       setIsLoading(false);
