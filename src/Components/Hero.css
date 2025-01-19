@@ -29,7 +29,7 @@
 /* Smooth flowing text animations */
 .hero-greeting {
   font-size: 1.5rem;
-  color: #ffffff; /* Updated to white for better visibility */
+  color: #b43616;
   margin-bottom: 0.5rem;
   animation: fadeInUp 1s ease forwards 0.3s;
 }
@@ -37,30 +37,28 @@
 .hero-title {
   font-size: 3.5rem;
   font-weight: bold;
-  color: #ffffff; /* Updated to white for better visibility */
+  color: #333333;
   margin-bottom: 1rem;
   animation: fadeInUp 1s ease forwards 0.6s;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added shadow for extra contrast */
 }
 
 .hero.dark-mode .hero-title {
-  color: #ffd700; /* Gold-like color for dark mode */
+  color: #ffffff;
 }
 
 .highlight-name {
-  color: #ffd700; /* Gold-like highlight for visibility */
+  color: #a93f25;
 }
 
 .hero.dark-mode .highlight-name {
-  color: #ffffff;
+  color: #ffd700;
 }
 
 .hero-subtitle {
   font-size: 1.5rem;
-  color: #ffffff; /* Updated to white for better visibility */
+  color: #666666;
   margin-bottom: 2rem;
   animation: fadeInUp 1s ease forwards 0.9s;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Added shadow for better contrast */
 }
 
 .hero.dark-mode .hero-subtitle {
@@ -143,7 +141,7 @@
 }
 
 .social-icons a {
-  color: #ffffff; /* Updated to white for better visibility */
+  color: #666666;
   transition: color 0.3s;
 }
 
@@ -160,10 +158,96 @@
   position: absolute;
   bottom: 20px;
   font-size: 2rem;
-  color: #ffffff; /* Updated to white for visibility */
+  color: #ff7e5f;
   animation: bounce 2s infinite, fadeInUp 1s ease forwards 2s;
 }
 
 .hero.dark-mode .scroll-down-indicator {
   color: #ffdd57;
+}
+
+/* Toggle Switch Styling */
+.toggle-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toggle-checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.toggle-label {
+  width: 50px;
+  height: 26px;
+  background-color: #ccc;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.toggle-checkbox:checked + .toggle-label {
+  background-color: #4d8efd;
+}
+
+.toggle-ball {
+  width: 22px;
+  height: 22px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.4s ease;
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-ball {
+  transform: translateX(24px);
+}
+
+/* Toggle Icons */
+.toggle-icon {
+  font-size: 1.2rem;
+  color: #ff7e5f;
+}
+
+.sun-icon {
+  color: #fbc02d;
+}
+
+.moon-icon {
+  color: #4d8efd;
+}
+
+.hero.dark-mode .toggle-icon {
+  color: #ffdd57;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-buttons {
+    gap: 1rem;
+    flex-direction: column;
+  }
+
+  .hero-image-container {
+    width: 150px;
+    height: 150px;
+  }
 }
